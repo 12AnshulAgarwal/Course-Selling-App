@@ -23,10 +23,10 @@ const Course=new Schema({
     creatorID:ObjectId
 })
 
-const Purchases=new Schema({
-    courseId:ObjectId,
-    userId:ObjectId
-})
+const Purchases = new Schema({
+    courseId: { type: Schema.Types.ObjectId, ref: "course" },
+    userId: { type: Schema.Types.ObjectId, ref: "user" },
+});
 
 const userModel=mongoose.model("user",Users);
 const AdminModel=mongoose.model("admin",Admin);
